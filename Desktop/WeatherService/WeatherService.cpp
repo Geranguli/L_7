@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Weather.h"
 #include "JsonService.h"
+#include "XmlService.h"
 
 using namespace std;
 
@@ -12,8 +13,11 @@ int main()
     weather.print();
 
     JsonService js;
-    Weather w = js.getWeather("weather.json");
+    Weather wJson = js.getWeather("weather.json");
 
-    w.print();
+    XmlService xs;
+    Weather wXml = xs.getWeather("weather.xml");
+    wXml.print();
+
     return 0;
 }
